@@ -1,8 +1,6 @@
-// this doesn't even work lol
-
 import java.util.Scanner;
 
-public class Exercise3_14 {
+public class Exercise3_21 {
     public static void main(String[] args) {
         int month;
         int day;
@@ -11,18 +9,35 @@ public class Exercise3_14 {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter the month, day and year in this format: XX XX XXXX. The name of the day of the week will be displayed.");
-        month = input.nextByte();
-        day = input.nextByte();
-        year = input.nextShort();
+        // prompt user and assign input
+        System.out.print("Enter year as four digits: ");
+        year = input.nextInt();
 
-        if((month < 1 || month > 12) || (day < 1 || day > 31) || (year < 0)) {
+        System.out.print("Enter month (1-12): ");
+        month = input.nextInt();
+
+        System.out.print("Enter day of the month: ");
+        day = input.nextInt();
+
+        // check to ensure valid input for day and year
+        if((day < 1 || day > 31) || (year < 0)) {
             System.out.println("Invalid input.");
             System.exit(1);
         }
-        
-        dayOfTheWeek = (day + (26 * (month + 1)) / 10 + (year % 100) + (year % 100) / 4 + (year / 100) / 4 + (5 *   (year / 100))) % 7;
 
+        // check to ensure valid input for month
+        if()
+
+        // correct month and year for January and February
+        if(month == 1 || month == 2) {
+            month += 12;
+            year--;
+        }
+        
+        // calculate day of the week
+        dayOfTheWeek = (day + ((26 * (month + 1)) / 10) + (year % 100) + ((year % 100) / 4) + ((year / 100) / 4) + (5 * (year / 100))) % 7;
+
+        // print day of the week from value
         switch (dayOfTheWeek) {
             case 0:
                 System.out.println("The day will be a Saturday");
