@@ -1,0 +1,50 @@
+// this doesn't even work lol
+
+import java.util.Scanner;
+
+public class Exercise3_14 {
+    public static void main(String[] args) {
+        int month;
+        int day;
+        int year;
+        int dayOfTheWeek;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter the month, day and year in this format: XX XX XXXX. The name of the day of the week will be displayed.");
+        month = input.nextByte();
+        day = input.nextByte();
+        year = input.nextShort();
+
+        if((month < 1 || month > 12) || (day < 1 || day > 31) || (year < 0)) {
+            System.out.println("Invalid input.");
+            System.exit(1);
+        }
+        
+        dayOfTheWeek = (day + (26 * (month + 1)) / 10 + (year % 100) + (year % 100) / 4 + (year / 100) / 4 + (5 *   (year / 100))) % 7;
+
+        switch (dayOfTheWeek) {
+            case 0:
+                System.out.println("The day will be a Saturday");
+                break;
+            case 1:
+                System.out.println("The day will be a Sunday");
+                break;
+            case 2:
+                System.out.println("The day will be a Monday");
+                break;
+            case 3:
+                System.out.println("The day will be a Tuesday");
+                break;
+            case 4:
+                System.out.println("The day will be a Wednesday");
+                break;
+            case 5:
+                System.out.println("The day will be a Thursday");
+                break;
+            case 6:
+                System.out.println("The day will be a Friday");
+                break;
+        }
+    }
+}
