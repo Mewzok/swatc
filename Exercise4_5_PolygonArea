@@ -37,3 +37,16 @@ public class Exercise4_5 {
                         + area);
     }
 }
+
+/*
+Prompt user for input
+Assign user input to number of sides and length of sides
+Check valid entry of both number of sides and length of sides, if not terminate program or allow reentry.
+Calculate area
+Display area
+
+1. The program must prompt the user for a number of sides and the length of those sides.
+2. The program must display the area of the polygon the user created.
+3. The program must first ensure the user input at least 3 sides and a length of over 0, then it must plug the user's input into the formula for determining the area of a regular polygon.
+4. The program will need an int for the number of sides, a double for length and a double to store the area.
+*/
