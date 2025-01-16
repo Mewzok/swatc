@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Exercise4_5 {
+    public static void main(String[] args) {
+        // declare variables
+        int numOfSides = 5;
+        double lengthOfSides = 2.0;
+        double area = 0.0;
+
+        Scanner input = new Scanner(System.in);
+
+        // receive and assign user input
+        System.out.print("Enter a number of sides: ");
+        numOfSides = input.nextInt();
+
+        // check for valid number of sides
+        if (numOfSides < 3) {
+            System.out.println("A polygon must have at least three sides.");
+            System.exit(1);
+        }
+
+        System.out.print("Enter length of sides: ");
+        lengthOfSides = input.nextDouble();
+
+        // check for valid length
+        if (lengthOfSides <= 0) {
+            System.out.println("Side length must be higher than 0.");
+            System.exit(1);
+        }
+
+        // calculate area
+        area = (numOfSides * (Math.pow(lengthOfSides, 2)) / (4 * Math.tan((3.14159 / numOfSides))));
+
+        // display area
+        System.out.println(
+                "The area of a polygon with " + numOfSides + " sides, each " + lengthOfSides + " units long is "
+                        + area);
+    }
+}
