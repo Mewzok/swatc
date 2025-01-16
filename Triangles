@@ -1,0 +1,36 @@
+public class Triangles {
+    public static void main(String[] args) throws Exception {
+        double a = 4.2;
+        double b = 5.1;
+        double c = 3;
+
+        Boolean isTriangle;
+        Boolean isEqualTriangle;
+        Boolean isRightTriangle;
+        Boolean isIsoTriangle;
+        Boolean isScaleneTriangle;
+
+        if ((a + b > c) && (a + c > b) && (b + c > a)) {
+            isTriangle = true;
+        } else {
+            isTriangle = false;
+        }
+
+        if ((a == b && a == c)) {
+            isEqualTriangle = true;
+        } else {
+            isEqualTriangle = false;
+        }
+
+        isRightTriangle = ((a > b && a > c) && (b * b + c * c == a * a))
+                || ((b > a && b > c) && (a * a + c * c == b * b)) || ((c > a && c > b) && (a * a + b * b == c * c));
+
+        isIsoTriangle = (a == b && a != c) || (a == c && a != b) || (b == c && b != a);
+
+        isScaleneTriangle = (a + b > c) && (a + c > b) && (b + c > a) && (a != b && a != c && b != c);
+
+        System.out.println("Is triangle: " + isTriangle + "\nIs equilateral triangle: " + isEqualTriangle
+                + "\nIs right triangle: " + isRightTriangle + "\nIs isosceles triangle: " + isIsoTriangle
+                + "\nIs scalene triangle: " + isScaleneTriangle);
+    }
+}
