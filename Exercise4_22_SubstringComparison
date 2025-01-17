@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Exercise4_22 {
+    public static void main(String[] args) {
+        String userString1 = "";
+        String userString2 = "";
+
+        Scanner input = new Scanner(System.in);
+
+        // display prompt and assign user input
+        System.out.print("Input first string: ");
+        userString1 = input.nextLine();
+
+        System.out.print("Input second string: ");
+        userString2 = input.nextLine();
+
+        // compare strings and display results
+        if (userString1.contains(userString2)) {
+            System.out.println(userString2 + " is a substring of " + userString1);
+        } else {
+            System.out.println(userString2 + " is not a substring of " + userString1);
+        }
+    }
+}
+
+/*
+Prompt user for string input twice
+Store both strings in variables
+Compare strings using contains method
+Display comparison results
+
+1. The program must prompt the user for two strings.
+2. The program must display the prompts for the strings and the result of the comparison.
+3. The program must simply compare the strings using the contains method.
+4. The program will require two string variables.
+*/
