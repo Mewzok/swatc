@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Exercise4_8 {
+    public static void main(String[] args) {
+        // declare variables
+        byte userInput = 0;
+
+        Scanner input = new Scanner(System.in);
+
+        // prompt user and assign input
+        System.out.print("Enter an ASCII code to display its character: ");
+        userInput = input.nextByte();
+
+        // determine and display ASCII code
+        System.out.println(userInput + "'s character is " + (char) userInput);
+    }
+}
