@@ -16,9 +16,9 @@ public class Exercise4_22 {
 
         // compare strings and display results
         if (userString1.contains(userString2)) {
-            System.out.println(userString2 + " is a substring of " + userString1);
+            System.out.println("'" + userString2 + "' is a substring of '" + userString1 + "'");
         } else {
-            System.out.println(userString2 + " is not a substring of " + userString1);
+            System.out.println("'" + userString2 + "' is not a substring of '" + userString1 + "'");
         }
     }
 }
