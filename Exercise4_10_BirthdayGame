@@ -28,7 +28,7 @@ public class Exercise4_10 {
                 "24 25 26 27\n" +
                 "28 29 30 31";
 
-        int day = 0;
+        byte day = 0;
 
         // Create a Scanner
         Scanner input = new Scanner(System.in);
@@ -107,11 +107,11 @@ Declare set strings
 Prompt user for input
 Store answer in char variable
 Test char variable for validity and value
-Repeat steps 2-4 for other sets
+Add value to day variable if yes, disregard if no
+Repeat steps 2-5 for all other sets
 Display result
 
-5. The program must prompt the user to enter Y or N in response to several questions.
-6. The program must display the purpose of the program, the strings associated with the game, and the results.
-7. The program must validate all user input and calculate the birthday according to the provided formula.
-8. The program must have an int variable that can store the day counter to calculate which day the user's birthday is. It must also have a char variable to hold the answer.
-*/
+1. The program must prompt the user to enter Y or N in response to several questions.
+2. The program must display the strings associated with the game, the rules and the results.
+7. The program must validate all user input and calculate the birthday by adding the selected yes option's individual values to the day variable.
+8. The program must have several String variables to hold the birthday sets, at least a byte variable to store the day counter to calculate which day the user's birthday is and a char variable to hold the answers.
