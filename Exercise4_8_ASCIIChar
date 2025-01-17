@@ -15,3 +15,14 @@ public class Exercise4_8 {
         System.out.println(userInput + "'s character is " + (char) userInput);
     }
 }
+
+/*
+Prompt user for input
+Assign user input
+Cast and display input as corresponding character
+
+1. The program must prompt the user for an ASCII code.
+2. The program must display the character corresponding to the user's input.
+3. The program must first check to ensure the user's input is valid, then it must determine and display the code.
+4. The only variable needed can be a byte.
+*/
