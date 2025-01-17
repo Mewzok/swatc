@@ -10,6 +10,7 @@ public class Exercise4_5 {
         Scanner input = new Scanner(System.in);
 
         // receive and assign user input
+        System.out.println("Enter the prompted information for a regular polygon.");
         System.out.print("Enter a number of sides: ");
         numOfSides = input.nextInt();
 
