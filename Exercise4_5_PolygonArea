@@ -9,7 +9,7 @@ public class Exercise4_5 {
 
         Scanner input = new Scanner(System.in);
 
-        // receive and assign user input
+        // receive and assign number of sides
         System.out.println("Enter the prompted information for a regular polygon.");
         System.out.print("Enter a number of sides: ");
         numOfSides = input.nextInt();
@@ -20,6 +20,7 @@ public class Exercise4_5 {
             System.exit(1);
         }
 
+        // receive and assign length of sides
         System.out.print("Enter length of sides: ");
         lengthOfSides = input.nextDouble();
 
@@ -38,6 +39,7 @@ public class Exercise4_5 {
                         + area);
     }
 }
+
 
 /*
 Prompt user for input
