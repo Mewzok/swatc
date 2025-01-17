@@ -19,10 +19,11 @@ public class Exercise4_8 {
 /*
 Prompt user for input
 Assign user input
+Check for valid input
 Cast and display input as corresponding character
 
-1. The program must prompt the user for an ASCII code.
-2. The program must display the character corresponding to the user's input.
-3. The program must first check to ensure the user's input is valid, then it must determine and display the code.
-4. The only variable needed can be a byte.
+1. The program must prompt the user for an integer.
+2. The program must display the instructional prompt and the character corresponding to the user's input.
+3. The program must first check to ensure the user's input is valid, then it must determine and display the result.
+4. The only variable needed can technically be a byte, however to avoid using error catching the variable will be a short or an int so improper input can be simply handled directly through console messaging for now.
 */
