@@ -1,0 +1,62 @@
+/*
+Prompt user for input
+Check input for valid number
+Check input for sentinel value
+Check input for positive or negative, increment positive or negative tracker variable by 1
+Add number to sum tracker
+Increment total numbers added tracker
+Repeat 1-5 until sentinel value input
+Compute average
+Display number of positive numbers, number of negative numbers, total sum and average.
+
+1. The program must prompt the user for any number of integers.
+2. The user must display the instructions for the program, the number of positive numbers, the number of negative numbers, the total sum of the numbers and the average of the numbers.
+3. The program must ensure valid input for every number and check for the sentinel value each time. The program must check for positive or negative value and increment a variable to track them. It must add the input together each time and determine the average when the sentinel value is input.
+4. The program will require a double variable for user input, an int variable for number of positives, an int variable for number of negatives, a double variable for total and a double variable for the average.
+*/
+
+import java.util.Scanner;
+
+public class Exercise5_1 {
+    public static void main(String[] args) {
+        // declare variables
+        double userInput = -1.0;
+        double totalSum = 0.0;
+        double numberAverage = 0.0;
+        int numOfNumbers = 0;
+        int numOfPositives = 0;
+        int numOfNegatives = 0;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter an integer, the input ends if it is 0: ");
+
+        // loop user input, increment trackers and add totals
+        while (userInput != 0) {
+            userInput = input.nextDouble();
+
+            totalSum += userInput;
+
+            if (userInput > 0) {
+                numOfPositives += 1;
+                numOfNumbers += 1;
+            } else if (userInput < 0) {
+                numOfNegatives += 1;
+                numOfNumbers += 1;
+            }
+        }
+
+        // check for no input, calculate average
+        if (numOfNumbers > 0) {
+            numberAverage = totalSum / numOfNumbers;
+        } else {
+            System.out.println("Must input more numbers than 0.");
+        }
+
+        // display results
+        System.out.println("The number of positives is " + numOfPositives);
+        System.out.println("The number of negatives is : " + numOfNegatives);
+        System.out.println("The total is " + totalSum);
+        System.out.println("The average is " + numberAverage);
+    }
+}
