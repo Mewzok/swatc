@@ -1,0 +1,35 @@
+/*
+Display "Kilograms" and "Pounds"
+Begin loop
+Display Kilogram variable, calculate and display Pounds variable, probably as String to format
+End loop at 199
+
+1. The doesn't require any input from the user.
+2. The program must display a table beginning with "Kilograms" and "Pounds" and only the odd numbered conversions of kilos and pounds properly separated.
+3. The program must appropiately convert kilograms into pounds.
+4. The program must have an int variable to store the kilograms and the same or a serparate int variable to iterate the loop. A String variable may be used to store and format pounds into a single-decimal number for better results.
+*/
+
+public class Exercise5_3 {
+    public static void main(String[] args) {
+        // declare variables
+        String poundString = "";
+
+        // display titles
+        System.out.println("Kilograms\t" + "Pounds");
+
+        // begin loop
+        for (int kilograms = 0; kilograms <= 199; kilograms++) {
+            // only odd numbers
+            if (kilograms % 2 == 0) {
+                continue;
+            }
+
+            // make pound only show to first decimal
+            poundString = String.format("%.1f", kilograms * 2.2);
+
+            // display
+            System.out.println(kilograms + "\t\t" + poundString);
+        }
+    }
+}
