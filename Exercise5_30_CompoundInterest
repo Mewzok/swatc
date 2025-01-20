@@ -1,0 +1,62 @@
+/*
+Prompt user for money deposited monthly and assign to double
+Prompt user for annual interest rate and assign to float
+Prompt user for number of months and assign to byte
+Check months to ensure not a negative
+Correct interest rate if entered a whole percent or a decimal
+Calculate interest rate
+Calculate total savings amount
+Display total, format total to only two decimal places to represent dollars and cents
+
+1. The program must prompt the user to enter an amount, the annual interest rate and the number of months.
+2. The program must display the total amount of money in the savings account after the number of months entered.
+3. The program must ensure the user enters valid input, then it must calculate the total amount in the savings account using the appropriate formula.
+4. The program could use a double for the amount, a float for interest rate, a byte for number of months and a double for total savings.
+*/
+
+import java.util.Scanner;
+
+public class Exercise5_30 {
+    public static void main(String[] args) {
+        // declare variables
+        byte months = 0;
+        float interestRate = 0.0f;
+        double deposit = 0.0;
+        double totalAmount = 0.0;
+
+        Scanner input = new Scanner(System.in);
+
+        // prompt user for input
+        System.out.print("Enter money deposited monthly: $");
+        deposit = input.nextDouble();
+
+        System.out.print("Enter annual interest rate: %");
+        interestRate = input.nextFloat();
+
+        System.out.print("Enter number of months: ");
+        months = input.nextByte();
+
+        // check for negative months
+        if (months < 0) {
+            months = 0;
+            System.out.println("Months cannot be less than 0.");
+        }
+
+        // correct interest rate if whole percent
+        if (interestRate >= 1) {
+            interestRate /= 100;
+        }
+
+        // calculate interest rate
+        interestRate /= 12;
+
+        // calculate total
+        for (int i = 0; i < months; i++) {
+            totalAmount = (deposit + totalAmount) * (1 + interestRate);
+        }
+
+        // format total amount to dollar and cent
+        // display total amount
+        System.out.println("Total amount in savings account is: $" + String.format("%.2f", totalAmount));
+    }
+}
