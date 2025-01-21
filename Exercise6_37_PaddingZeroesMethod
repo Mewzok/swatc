@@ -1,0 +1,54 @@
+/*
+Prompt user for number and width
+Assign both to int variables
+Send number and width to format method
+Convert number to String
+Append zeros to beginning of numberString based on width
+return String
+Display String
+
+1. The program must prompt the user for a number and a width.
+2. The program must display the prompt and the final String with the user selected number of zeroes appended to the beginning of the original number.
+3. The program must ensure the user entered valid input, then it must convert the number to a String and append zeroes to the beginning of the number.
+4. The program could have an int to store the user's number, an int to store the user's width and a String to store the final result.
+*/
+
+import java.util.Scanner;
+
+public class Exercise6_37 {
+    public static void main(String[] args) {
+        // declare variables
+        int number = 0;
+        int width = 0;
+        String newNumberString = "";
+
+        Scanner input = new Scanner(System.in);
+
+        // prompt user and assign number and width
+        System.out.print("Enter a number: ");
+        number = input.nextInt();
+
+        // check for valid width
+        while (width < 1) {
+            System.out.print("Enter a width: ");
+            width = input.nextInt();
+
+            if (width < 1) {
+                System.out.println("Width cannot be less than 0.");
+            }
+        }
+
+        // format number
+        newNumberString = format(number, width);
+
+        // display new number String
+        System.out.println("The new number is " + newNumberString);
+    }
+
+    public static String format(int number, int width) {
+        // create and format String using width and number
+        String newNumber = String.format("%0" + width + "d", number);
+
+        return newNumber;
+    }
+}
