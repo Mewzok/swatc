@@ -1,13 +1,15 @@
 /*
+Declare int variable to track number of numbers per line
 Begin loop iterating i 100 through 200
 Check if i % 5 exclusive or i % 6 is 0, if so move to second if statement
-Check if number per line tracker is less than or equal 10. If so display with space, if not display with new line and reset tracker to 0
+Check if number per line tracker is less than or equal to 10. If so display with space, if not display with new line and reset tracker to 0
 End loop
 
 1. The program doesn't require any input from the user.
 2. The program must display every number between 100 and 200 that is divisible by 5 or 6 but not both in lines of 10 where each number is separated by a single space.
 3. The program must repeatedly divide every number between 100 and 200 by both 5 and 6, check if there is no remainder for both, and if there is no remainder for one but not both, display the number with appropiate String formatting.
-4. The program must have one short to store the number of numbers display in the String to only display 10 per line.
+4. The program must repeat the code that checks each number for its division result and displays them.
+5. The program must have one short to store the number of numbers displayed in the String to only display 10 per line.
 */
 
 public class Exercise5_11 {
@@ -16,9 +18,9 @@ public class Exercise5_11 {
         short numOfNums = 0;
 
         // begin loop
-        for (int i = 99; i <= 200; i++) {
+        for (int i = 100; i <= 200; i++) {
 
-            // check divisible by 5 or 6
+            // check divisible by 5 exclusive or 6
             if (i % 5 == 0 ^ i % 6 == 0) {
 
                 // display and increment
