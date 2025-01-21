@@ -1,18 +1,17 @@
-/*
 Prompt user for number
 Assign number to int variable userInput
 Send userInput to printMatrix method
-Run for loop for userInput length to begin displaying output vertically
-Immediately run another for loop for userInput length to begin displaying output horizontally
+Begin for loop for userInput length to begin displaying output vertically
+Begin another for loop for userInput length to begin displaying output horizontally
 Run random number generator and round output to 0 or 1 for each iteration
 Display numbers for each iteration until end of second for loop
-Add new line and repeat 6-8 for each iteration until end of first for loop
+Add new line and repeat second for loop for each iteration until end of first for loop
 
-1. The program must prompt the user for a number to determine the "length" and "width" of the matrix.
-2. The program must display the prompt to the user and the final matrix.
-3. The program must ensure the user entered valid input, then it must generate random 0s and 1s and display them in a matrix whose size is defined by the user.
-4. The program could have an int to store the user's input.
-*/
+1. The program could have an int to store the user's input.
+2. The program technically only needs to display the effect of the user's input, stored in an int variable.
+3. The program must check for valid input, a matrix less than 1 unit long or wide wouldn't function. The program must then perform several random number generations and rounding functions to display 0s and 1s.
+4. The user input should be repeated to ensure valid input. The program must also repeat the displaying of the generated and rounded 0s and 1s both horizontally and vertically until the matrix length and width is reached.
+5. The program requires the use of a "printMatrix" method, modularizing the code and keeping all calculations in one place, separate from the main method.
 
 import java.util.Scanner;
 
