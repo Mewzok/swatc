@@ -1,16 +1,18 @@
 /*
-Prompt user for number and width
-Assign both to int variables
+Prompt user for number
+Assign number to int variable
+Prompt user for width in while loop to ensure valid input
+Assign width to int variable
 Send number and width to format method
-Convert number to String
-Append zeros to beginning of numberString based on width
-return String
+Convert number and width to formatted String, formatting to prefix zeroes to number based on width
+Return String
 Display String
 
-1. The program must prompt the user for a number and a width.
-2. The program must display the prompt and the final String with the user selected number of zeroes appended to the beginning of the original number.
-3. The program must ensure the user entered valid input, then it must convert the number to a String and append zeroes to the beginning of the number.
-4. The program could have an int to store the user's number, an int to store the user's width and a String to store the final result.
+1. The program could have an int to store the user's number, an int to store the user's width and a String to store the final result.
+2. The only variable required to display is the new number String.
+3. The program must check for a valid width, then create and format a String with the user's number and width.
+4. The input for width could be repeated to ensure valid input.
+5. The code that creates and formats the String containing the newly created number using the user's number and width will be in a "format" method to help modularize the code.
 */
 
 import java.util.Scanner;
