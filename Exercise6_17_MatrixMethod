@@ -1,0 +1,54 @@
+/*
+Prompt user for number
+Assign number to int variable userInput
+Send userInput to printMatrix method
+Run for loop for userInput length to begin displaying output vertically
+Immediately run another for loop for userInput length to begin displaying output horizontally
+Run random number generator and round output to 0 or 1 for each iteration
+Display numbers for each iteration until end of second for loop
+Add new line and repeat 6-8 for each iteration until end of first for loop
+
+1. The program must prompt the user for a number to determine the "length" and "width" of the matrix.
+2. The program must display the prompt to the user and the final matrix.
+3. The program must ensure the user entered valid input, then it must generate random 0s and 1s and display them in a matrix whose size is defined by the user.
+4. The program could have an int to store the user's input.
+*/
+
+import java.util.Scanner;
+
+public class Exercise6_17 {
+    public static void main(String[] args) {
+        // declare variables
+        int userInput = 0;
+
+        Scanner input = new Scanner(System.in);
+
+        // ensure input is greater than 0
+        while (userInput < 1) {
+            // prompt user and assign input
+            System.out.print("Enter number for length and width of matrix: ");
+            userInput = input.nextInt();
+
+            // display warning if input is less than 1
+            if (userInput < 1) {
+                System.out.println("Number must be greater than 0.");
+            }
+        }
+
+        // print matrix
+        printMatrix(userInput);
+    }
+
+    public static void printMatrix(int n) {
+        // print vertically
+        for (int i = 0; i < n; i++) {
+
+            // print horizontally
+            for (int j = 0; j < n; j++) {
+                System.out.print(Math.round(Math.random()) + " ");
+            }
+
+            System.out.println();
+        }
+    }
+}
