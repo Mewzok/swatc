@@ -27,20 +27,20 @@ public class Exercise5_30 {
         Scanner input = new Scanner(System.in);
 
         // prompt user for input
-        System.out.print("Enter money deposited monthly: $");
+        System.out.print("Enter monthly saving amount: $");
         deposit = input.nextDouble();
 
-        System.out.print("Enter annual interest rate: %");
-        interestRate = input.nextFloat();
-
-        System.out.print("Enter number of months: ");
+        System.out.print("Enter number of months of savings: ");
         months = input.nextByte();
 
         // check for negative months
-        if (months < 0) {
-            months = 0;
-            System.out.println("Months cannot be less than 0.");
+        while (months < 0) {
+            System.out.print("Months cannot be less than 0.\nEnter number of months of savings: ");
+            months = input.nextByte();
         }
+
+        System.out.print("Enter annual interest rate without percent symbol (ex. 4% = 4): ");
+        interestRate = input.nextFloat();
 
         // correct interest rate if whole percent
         if (interestRate >= 1) {
@@ -57,6 +57,7 @@ public class Exercise5_30 {
 
         // format total amount to dollar and cent
         // display total amount
-        System.out.println("Total amount in savings account is: $" + String.format("%.2f", totalAmount));
+        System.out.println("After the month " + months + ", the account value is $" + 
+            String.format("%.2f", totalAmount));
     }
 }
