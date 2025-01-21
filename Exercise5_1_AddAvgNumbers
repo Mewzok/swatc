@@ -57,6 +57,6 @@ public class Exercise5_1 {
         System.out.println("The number of positives is " + numOfPositives);
         System.out.println("The number of negatives is : " + numOfNegatives);
         System.out.println("The total is " + totalSum);
-        System.out.println("The average is " + numberAverage);
+        System.out.printf("The average is %.2f", numberAverage);
     }
 }
