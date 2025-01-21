@@ -20,7 +20,6 @@ import java.util.Scanner;
 public class Exercise5_1 {
     public static void main(String[] args) {
         // declare variables
-        double userInput = -1.0;
         double totalSum = 0.0;
         double numberAverage = 0.0;
         int numOfNumbers = 0;
@@ -29,12 +28,11 @@ public class Exercise5_1 {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter an integer, the input ends if it is 0: ");
+        System.out.print("Enter a positive or negative number: ");
+        double userInput = input.nextDouble();
 
         // loop user input, increment trackers and add totals
         while (userInput != 0) {
-            userInput = input.nextDouble();
-
             totalSum += userInput;
 
             if (userInput > 0) {
@@ -44,6 +42,9 @@ public class Exercise5_1 {
                 numOfNegatives += 1;
                 numOfNumbers += 1;
             }
+
+            System.out.print("Enter a positive or negative number (0 to quit): ");
+            userInput = input.nextDouble();
         }
 
         // check for no input, calculate average
@@ -54,8 +55,8 @@ public class Exercise5_1 {
         }
 
         // display results
-        System.out.println("The number of positives is " + numOfPositives);
-        System.out.println("The number of negatives is : " + numOfNegatives);
+        System.out.println("Positive numbers: " + numOfPositives);
+        System.out.println("Negative numbers: " + numOfNegatives);
         System.out.println("The total is " + totalSum);
         System.out.printf("The average is %.2f", numberAverage);
     }
