@@ -1,22 +1,27 @@
 /*
 6-3 Planning
 
+/*
+6-3 Planning
+
 Prompt user for integer
 Assign integer to int variable
 Send isPalindrome method user inputted variable
 Send user inputted variable in isPalindrome method to reverse method
 Assign user input to String
 Reverse String
+Display original number String and reversed number String
 Convert String back to int
 Return int to isPalindrome method
 Compare reversed int with original int to see if the same
 Return true or false value to main method and assign to boolean value
 Display result of isPalindrome
 
-1. The program must prompt the user for an integer.
-2. The program must display the prompt for an integer and if the entered integer is a palindrome integer.
+1. The program could have an int to store the inputted number and a boolean to store the result of the number being a palindrome. The methods will require their own variables, the reverse method could use a String for the original number, a reverse String to reverse the ints easily and a char to take each number out of the original number String and back into the reverse String. The isPalindrome method will require an int variable to assign the reversed number to so it can compare the original number and reversed number.
+2. The only variable required to display is the value of the Boolean isPalindrome variable, to show the user if their entered number is a palindrome or not. The program could also display the user's number and its reverse for extra clarity.
 3. The program must ensure the user enters valid input, then it must reverse the inputted number to determine if the number is a palindrome integer or not.
-4. The program could have an int to store the inputted number and a boolean to store the result of the number being a palindrome. The methods will require their own variables, the reverse method could use Strings to reverse the ints easily, so a String to store the number, a char to take each number out, and a reverse String to add each char number to. The isPalindrome method will require a variable to assign the reversed number to so it can compare the original number and reversed number.
+4. Creating the program this way, the only necessary looping will be to remove a character from the int String to place it in the reversed int String.
+5. The program must use two methods, "isPalindrome" and "reverse", as per the instructions.
 */
 
 import java.util.Scanner;
