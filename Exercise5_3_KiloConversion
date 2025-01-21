@@ -13,23 +13,22 @@ End loop at 199
 public class Exercise5_3 {
     public static void main(String[] args) {
         // declare variables
-        String poundString = "";
+        double pounds = 0.0;
 
         // display titles
         System.out.println("Kilograms\t" + "Pounds");
 
         // begin loop
-        for (int kilograms = 0; kilograms <= 199; kilograms++) {
+        for (int kilograms = 0; kilograms < 200; kilograms++) {
             // only odd numbers
             if (kilograms % 2 == 0) {
                 continue;
             }
 
-            // make pound only show to first decimal
-            poundString = String.format("%.1f", kilograms * 2.2);
-
+            pounds = kilograms * 2.2;
+            
             // display
-            System.out.println(kilograms + "\t\t" + poundString);
+            System.out.printf("%1d\t\t%.1f\n", kilograms, pounds);
         }
     }
 }
