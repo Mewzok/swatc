@@ -17,6 +17,10 @@ public class Exercise5_11 {
         // declare variables
         short numOfNums = 0;
 
+        // display purpose of program
+        System.out.print("Counting from 100 - 200\nDivisible by 5 or 6, but not both\n" +
+        "---------------------------------\n");
+
         // begin loop
         for (int i = 100; i <= 200; i++) {
 
