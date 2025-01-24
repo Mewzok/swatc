@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Exercise7_9 {
+    public static void main(String[] args) {
+        // declare variables
+        double[] numbers = new double[10];
+        double minNumber = 0.0;
+
+        Scanner input = new Scanner(System.in);
+
+        // prompt user and recieve input
+        System.out.print("Enter 10 numbers separated by a space: ");
+
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = input.nextDouble();
+        }
+
+        // find min
+        minNumber = min(numbers);
+
+        // display minimum number
+        System.out.println("The minimum number is: " + minNumber);
+    }
+
+    public static double min(double[] array) {
+        // declare variables
+        double min = array[0];
+
+        // search array for minimum number
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+
+        return min;
+    }
+}
