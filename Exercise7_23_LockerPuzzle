@@ -1,0 +1,43 @@
+public class Exercise7_23 {
+    public static void main(String[] args) {
+        // declare variables
+        boolean[] lockers = new boolean[100];
+
+        changeLockerState(lockers);
+
+        // display open lockers
+        System.out.print("The open lockers are: ");
+
+        for (int i = 0; i < lockers.length; i++) {
+            if (lockers[i] == true) {
+                System.out.print("L" + (i + 1) + " ");
+            }
+        }
+    }
+
+    public static void changeLockerState(boolean[] lockersArr) {
+        // declare variables
+        int count = 0;
+
+        // interate "students"
+        for (int i = 0; i < lockersArr.length; i++) {
+
+            // iterate "lockers"
+            for (int j = 0; j < lockersArr.length; j++) {
+
+                // check if student's turn to open locker
+                if (count == i) {
+                    if (lockersArr[j] == false) {
+                        lockersArr[j] = true;
+                    } else {
+                        lockersArr[j] = false;
+                    }
+                    count = 0;
+                } else {
+                    count++;
+                }
+            }
+            count = 0;
+        }
+    }
+}
