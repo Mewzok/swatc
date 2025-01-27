@@ -1,0 +1,101 @@
+import java.util.Scanner;
+
+public class Exercise8_37 {
+    public static void main(String[] args) {
+        // declare variables
+        int correctAnswers = 0;
+        boolean correct = false;
+        String[][] statesAndCapitals = { { "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
+                "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+                "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
+                "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
+                "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+                "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
+                "Washington", "West Virginia", "Wisconsin", "Wyoming" },
+                { "Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento", "Denver", "Hartford", "Dover",
+                        "Tallahassee", "Atlanta", "Honolulu", "Boise", "Springfield", "Indianapolis", "Des Moines",
+                        "Topeka", "Frankfort", "Baton Rouge", "Augusta", "Annapolis", "Boston", "Lansing", "Saint Paul",
+                        "Jackson", "Jefferson City", "Helena", "Lincoln", "Carson City", "Concord", "Trenton",
+                        "Santa Fe", "Albany", "Raleigh", "Bismarck", "Columbus", "Oklahoma City", "Salem", "Harrisburg",
+                        "Providence", "Columbia", "Pierre", "Nashville", "Austin", "Salt Lake City", "Montpelier",
+                        "Richmond", "Olympia", "Charleston", "Madison", "Cheyenne" } };
+
+        String[][] randomStatesAndCaps = new String[10][10];
+
+        Scanner input = new Scanner(System.in);
+
+        // roll 10 random states and their capitals
+        rollRandomStatesAndCaps(statesAndCapitals, randomStatesAndCaps);
+
+        // prompt user for all questions
+        for (int i = 0; i < randomStatesAndCaps.length; i++) {
+            correct = promptQuestion(i, randomStatesAndCaps);
+
+            // add to correct number if correct and display correct or incorrect
+            if (correct) {
+                correctAnswers++;
+                System.out.println("Correct.");
+            } else {
+                System.out.println("Incorrect.");
+            }
+        }
+
+        // display total correct answers and percentage
+        System.out.println("Correct answers: " + correctAnswers + "/10" + ". " + (correctAnswers * 10) + "%");
+    }
+
+    public static void rollRandomStatesAndCaps(String[][] stsCps, String[][] rndmStsCps) {
+        // declare variables
+        int randomNumber = -1;
+        int[] numsGenned = new int[10];
+        boolean checkNum = false;
+
+        for (int i = 0; i < rndmStsCps.length; i++) {
+            checkNum = false;
+            randomNumber = (int) (Math.random() * 50);
+
+            // ensure no duplicates
+            for (int j = 0; j < numsGenned.length; j++) {
+                if (numsGenned[j] == randomNumber) {
+                    checkNum = true;
+                }
+            }
+            if (checkNum == true) {
+                i--;
+                continue;
+            }
+
+            // add non-duplicate random number to numbers generated array
+            numsGenned[i] = randomNumber;
+
+            // write random states and their capitals to random states and capitals array,
+            // creating the array of 10 random states together with their capitals
+            rndmStsCps[0][i] = stsCps[0][numsGenned[i]];
+            rndmStsCps[1][i] = stsCps[1][numsGenned[i]];
+        }
+    }
+
+    public static boolean promptQuestion(int num, String[][] randomStsNCaps) {
+        // declare variables
+        boolean isCorrect = false;
+        String userInput = "";
+
+        Scanner in = new Scanner(System.in);
+
+        // prompt user and recieve answer
+        System.out.print("The capital of " + randomStsNCaps[0][num] + " is: ");
+        userInput = in.nextLine();
+
+        // check if correct answer ignoring case, assign isCorrect accordingly
+        if (userInput.equalsIgnoreCase(randomStsNCaps[1][num])) {
+            isCorrect = true;
+        } else {
+            isCorrect = false;
+        }
+
+        // print the correct state and capital combination before user's answer
+        System.out.println("The capital of " + randomStsNCaps[0][num] + " is " + randomStsNCaps[1][num] + ".");
+
+        return isCorrect;
+    }
+}
