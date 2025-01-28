@@ -42,6 +42,7 @@ public class Exercise8_9 {
         // declare variables
         int cellChoiceRow = -1;
         int cellChoiceColumn = -1;
+        boolean win = false;
 
         Scanner input = new Scanner(System.in);
 
@@ -76,6 +77,12 @@ public class Exercise8_9 {
                 } else {
                     layout[cellChoiceRow][cellChoiceColumn] = String.valueOf(playerChar); // place X or O in layout
                                                                                           // based on current player
+                    win = checkForWinner(layout, playerChar);
+                    if(win == true){
+                        printCurrentLayout(layout);
+                        System.out.println(playerChar + " wins.");
+                        System.exit(0);
+                    }
                 }
             }
         }
@@ -90,5 +97,40 @@ public class Exercise8_9 {
                         + " |\n" +
                         "-------------\n| " + tttLayout[2][0] + " | " + tttLayout[2][1] + " | " + tttLayout[2][2]
                         + " |\n-------------");
+    }
+
+    public static boolean checkForWinner(String[][] lyt, char p) {
+        // declare variables
+        int rowCount = 0;
+        int columnCount = 0;
+        boolean winner = false;
+
+        for(int i = 0; i < lyt.length; i++) {
+            for(int j = 0; j < lyt[i].length; j++) {
+                if(lyt[i][j].equals(String.valueOf(p))) { // check if 3 in a row horizontally
+                    rowCount++;
+                    if(rowCount == 3) {
+                        winner = true;
+                    }
+                }
+
+                if(lyt[j][i].equals(String.valueOf(p))) { // check if 3 in a row vertically
+                    columnCount++;
+                    if(columnCount == 3) {
+                        winner = true;
+                    }
+                }
+
+                if(lyt[0][0].equals(String.valueOf(p)) && lyt[1][1].equals(String.valueOf(p)) &&  // check for 3 in a
+                lyt[2][2].equals(String.valueOf(p)) || lyt[0][2].equals(String.valueOf(p)) &&     // row diagonally
+                lyt[1][1].equals(String.valueOf(p)) && lyt[2][0].equals(String.valueOf(p))) {
+                    winner =  true;
+                }
+            }
+            rowCount = 0;
+            columnCount = 0;
+        }
+
+        return winner;
     }
 }
