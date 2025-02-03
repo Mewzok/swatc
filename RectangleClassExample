@@ -1,0 +1,64 @@
+// file 1 TestRectangle.java
+import java.util.Scanner;
+public class TestRectangle {
+    public static void main(String[] args) {
+        // declare variables
+        Scanner input = new Scanner(System.in);
+
+        // recieve length
+        System.out.println("Enter rectanlge length: ");
+        double rectLength = input.nextDouble();
+
+        // recieve height
+        System.out.println("Enter rectangle height: ");
+        double rectHeight = input.nextDouble();
+
+        // create rectangle object
+        Rectangle rectangle = new Rectangle(rectLength, rectHeight);
+
+        // display area
+        System.out.println("Area of rectangle: " + rectangle.getArea());
+
+        // display perimeter
+        System.out.println("Perimeter of rectangle: " + rectangle.getPerimeter());
+    }
+}
+
+// file 2 Rectangle.java
+public class Rectangle {
+    private double length;
+    private double height;
+
+    public Rectangle() {
+        this(1.0, 1.0);
+    }
+
+    public Rectangle(double length, double height) {
+        this.length = length;
+        this.height = height;
+    }
+
+    public double getLength() {
+        return length;
+    }
+
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getArea() {
+        return length * height;
+    }
+
+    public double getPerimeter() {
+        return 2 * (length + height);
+    }
+}
